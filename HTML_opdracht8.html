@@ -1,0 +1,45 @@
+<head>
+    <title>Opdracht 8</title>
+</head>
+<body>
+    <h2>Opdracht 8</h2>
+
+    <!-- Info over de pagina -->
+    <p>In Nederland hebben we vier verschillende seizoenen: Lente, zomer, herfst en winter</p>
+    <p>Op deze pagina kun je de seizoenen bekijken met KNA en KNB.</p>
+    <p>Wanneer in AFBA de lente verschijnt, zie je in AFBB lammetjes</p>
+
+    <!-- Buttons -->
+    <button onclick="volgendSeizoen('AFBA')">KNA</button>
+    <button onclick="volgendSeizoen('AFBB')">KNB</button>
+   
+    <br>
+
+    <!-- Afbeeldingen -->
+    <img id="AFBA" src="winter.jpeg" style="width:200px">
+    <img id="AFBB" src="zomer.jpeg" style="width:200px">
+
+    <script>
+        let seizoenen = ["lente.jpeg", "zomer.jpeg", "herfst.jpeg", "winter.jpeg"];
+        
+        let huidigeSeizoenen = {
+            "AFBA": 3,
+            "AFBB": 1  
+        };
+
+        // Functie die de afbeelding verandert naar het volgende seizoen.
+        function volgendSeizoen(afbeeldingID) {
+            huidigeSeizoenen[afbeeldingID] = (huidigeSeizoenen[afbeeldingID] + 1) % seizoenen.length;
+            document.getElementById(afbeeldingID).src = seizoenen[huidigeSeizoenen[afbeeldingID]];
+            
+            // Als AFBA op lente staat, AFBB wordt lammetjes
+            if (afbeeldingID === "AFBA" && huidigeSeizoenen["AFBA"] === 0) {
+                document.getElementById("AFBB").src = "lammetjes.jpeg";
+            }
+            // Als AFBA niet meer op lente staat, AFBB terug naar huidigseizoen
+            else if (afbeeldingID === "AFBA" && huidigeSeizoenen["AFBA"] !== 0) {
+                document.getElementById("AFBB").src = seizoenen[huidigeSeizoenen["AFBB"]];
+            }
+        }
+    </script>
+</body>
