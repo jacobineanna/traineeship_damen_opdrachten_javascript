@@ -1,0 +1,50 @@
+<body>
+    <h1>Hoe vaak komt de letter "e" voor in mijn tekst?</h1>
+
+    <input id="echecker" type="text">
+    <input type="button" value="Zit er een e in?" onclick="echeck()">
+
+    <br>
+    <br>
+
+    <h1>En hoe vaak komt de letter (eigen keuze) voor in mijn tekst?</h1>
+
+    <input id="charchecker" type="text">
+    <input type="button" value="Zit deze letter erin" onclick="charcheck()">
+
+    <script>
+        function echeck(){
+            let tekst = document.getElementById("echecker").value;
+            let countE = (tekst.match(/e/gi) || []).length;
+            if (countE > 0){
+                alert("De letter 'e' komt " + countE + " keer voor.");
+            }
+        }
+        function charcheck(){
+            let tekst = document.getElementById("echecker").value;
+            let char = document.getElementById("charchecker").value;
+            let countchar = (tekst.match(new RegExp(char, "gi")) || []).length;
+            if (countchar > 0){
+                alert("De letter " + char + " komt " + countchar + " keer voor.");
+            }
+        }
+    </script>
+
+</body>
+
+/* new RegExp (char, "gi") is a pattern of characters. The pattern is used
+for searching and replacing characters in strings.
+In JavaScript regular expressions, gi are flags that modify the behavior of
+the regular expression.
+- g: Global search flag.
+    -> This flag tells the regular expression to search for all occurrences
+    of the pattern in the input string, not just the first one.
+    -> Without the g flag, the regular expression would stop searching after 
+    finding the first match.
+- i: Case-insensitive flag.
+    -> This flag makes the search case-insensitive, meaning it will match 
+    letters regardless of whether they are uppercase or lowercase.
+    -> For example, /e/gi would match both e and E in the text.
+
+Link reference guide: https://www.w3schools.com/jsref/jsref_obj_regexp.asp
+*/

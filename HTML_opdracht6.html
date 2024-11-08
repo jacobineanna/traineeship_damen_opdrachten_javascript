@@ -1,0 +1,42 @@
+
+<head>
+    <title>Opdracht 6</title>
+</head>
+<body>
+    <h2>Opdracht 6</h2>
+
+    <p>In Nederland hebben we vier verschillende seizoenen: Lente, zomer, herfst en winter</p>
+    <p>Op deze pagina kun je de seizoenen bekijken.</p>
+
+    <!-- Button en afbeelding-->
+    <button onclick="volgendSeizoen()">Volgende Seizoen!</button>
+    <br>
+    <img id="seizoenen" src="lente.jpeg" style="width:100px">
+
+    <!-- Div om de jaren weer te geven -->
+    <div id="jaar-info"></div>
+
+    <script>
+        // Array met afbeeldingen voor de 4 seizoenen
+        let seizoenen = ["lente.jpeg", "zomer.jpeg", "herfst.jpeg", "winter.jpeg"];
+        let huidigeSeizoen = 0; // Start bij het eerste seizoen (Lente)
+        let aantalKliks = 0;    // Counter voor het aantal keer klikken
+
+        // Functie die afbeelding naar het volgende seizoen verandert en een div geeft met hoeveel jaar er voor bij is.
+        function volgendSeizoen() {
+            aantalKliks++;      // Verhoog de klik-teller
+
+            // Afbeelding wijzigen
+            huidigeSeizoen = (huidigeSeizoen + 1) % seizoenen.length; // Blijf binnen de arraylengte
+            document.getElementById("seizoenen").src = seizoenen[huidigeSeizoen];
+
+            // Aantal jaren voorbij
+            let jarenVoorbij = Math.floor(aantalKliks / 4);
+            if (jarenVoorbij == 1){
+                document.getElementById("jaar-info").innerText = "Er is " + jarenVoorbij + " jaren voorbij";
+            }
+            else if (jarenVoorbij >= 2 )
+            document.getElementById("jaar-info").innerText = "Er zijn " + jarenVoorbij + " jaren voorbij";
+        }
+    </script>
+</body>

@@ -1,0 +1,31 @@
+<body>
+    <h1>Knop-klik history</h1>
+
+    <div id="clickhistory"></div>
+
+    <input type="button" value="A" onclick="history('A')">
+    <input type="button" value="B" onclick="history('B')">
+    <input type="button" value="C" onclick="history('C')">
+    <input type="button" value="D" onclick="history('D')">
+
+    <script>
+        let historyarray = []; // Leeg array om klik geschiedenis bij te houden
+        function history(knop) {
+            console.log(historyarray)
+            if (historyarray.includes (knop)){
+                alert("U heeft al op knop " + knop + " gedrukt.")
+            }
+            else {let historyDiv = document.createElement("div");
+                historyDiv.innerText = "U heeft op knop " + knop + " gedrukt.";
+                document.getElementById("clickhistory").appendChild(historyDiv);
+                historyarray.push(knop);
+            }
+        }
+    </script>
+</body>
+
+/* Notes: Created historyarray to log clickhistory. Secondly, I created
+if else statement to check whether I already clicked on the knop.
+
+Don't forget curly brackets after a else statement. 
+Use .push to append to an array. */

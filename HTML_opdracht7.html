@@ -1,0 +1,50 @@
+<head>
+    <title>Opdracht 7</title>
+</head>
+<body>
+    <h2>Opdracht 7</h2>
+
+    <!-- Info over de pagina -->
+    <p>In Nederland hebben we vier verschillende seizoenen: Lente, zomer, herfst en winter</p>
+    <p>Op deze pagina kun je de seizoenen bekijken met KNA en KNB.</p>
+    <p>Op deze pagina kun je de seizoenen in de afbeeldingen vergelijken met KNC.</p>
+
+    <!-- Buttons -->
+    <button onclick="volgendSeizoen('AFBA')">KNA</button>
+    <button onclick="volgendSeizoen('AFBB')">KNB</button>
+    <button onclick="SameAsCheck()">KNC</button>
+    <br>
+
+    <!-- Afbeeldingen -->
+    <img id="AFBA" src="lente.jpeg" style="width:200px">
+    <img id="AFBB" src="zomer.jpeg" style="width:200px">
+
+    <script>
+        // Array met afbeeldingen voor elk seizoen
+        const seizoenen = ["lente.jpeg", "zomer.jpeg", "herfst.jpeg", "winter.jpeg"];
+        
+        // Object om de huidige seizoenen bij te houden voor beide afbeeldingen
+        let huidigeSeizoenen = {
+            "AFBA": 0, // Start bij het eerste seizoen (Lente)
+            "AFBB": 1  // Start bij het tweede seizoen (Zomer)
+        };
+
+        // Functie die de afbeelding verandert naar het volgende seizoen in de array.
+        function volgendSeizoen(afbeeldingID) {
+            huidigeSeizoenen[afbeeldingID] = (huidigeSeizoenen[afbeeldingID] + 1) % seizoenen.length;
+            document.getElementById(afbeeldingID).src = seizoenen[huidigeSeizoenen[afbeeldingID]];
+        }
+
+        // Functie die checkt of AFBA en AFBB hetzelfde seizoen tonen en logt het resultaat
+        function SameAsCheck(){
+            srcAFBA = document.getElementById("AFBA").src;
+            srcAFBB = document.getElementById("AFBB").src;
+            if (srcAFBA == srcAFBB){
+                console.log("HETZELFDE")
+            }
+            else{
+                console.log("NIET HETZELFDE")
+            }
+        }
+    </script>
+</body>

@@ -1,0 +1,23 @@
+
+<body>
+    <h1>Hoe vaak komt de letter "e" voor in mijn tekst?</h1>
+
+    <input id="echecker" type="text">
+    <input type="button" value="Zit er een e in?" onclick="echeck()">
+
+    <script>
+        function echeck(){
+            let tekst = document.getElementById("echecker").value;
+            let countE = (tekst.match(/e/gi) || []).length;
+            if (countE > 0){
+                alert("De letter 'e' komt " + countE + " keer voor.");
+            }
+        }
+    </script>
+
+</body>
+
+
+
+
+

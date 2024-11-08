@@ -1,0 +1,25 @@
+<body>
+    <h1>Knop-klik history</h1>
+
+    <div id="clickhistory"></div>
+
+    <input type="button" value="A" onclick="history('A')">
+    <input type="button" value="B" onclick="history('B')">
+    <input type="button" value="C" onclick="history('C')">
+    <input type="button" value="D" onclick="history('D')">
+
+    <script>
+        function history(knop) {
+            let historyDiv = document.createElement("div");
+            historyDiv.innerText = "U heeft op knop " + knop + " gedrukt.";
+            document.getElementById("clickhistory").appendChild(historyDiv);
+        }
+    </script>
+</body>
+
+/* Nieuwe commands: 
+        - createElement: Creates an element and appends it to the document.
+                https://www.w3schools.com/jsref/met_document_createelement.asp
+        - appendChild: appends a node (element) as the last child of an element.
+                https://www.w3schools.com/jsref/met_node_appendchild.asp
+*/

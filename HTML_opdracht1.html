@@ -1,0 +1,19 @@
+<script>
+    function groeten(){
+        let groet = document.getElementById("begroeting").value;
+        console.log(groet);
+        if (groet == "hallo"){
+            document.getElementById("reactie").innerHTML = "Welkom";
+        }
+        else if (groet == "doei"){
+            document.getElementById("reactie").innerHTML = "Tot de volgende keer";
+        }
+        else {
+                document.getElementById("reactie").innerHTML = "";
+        }
+    }
+</script>
+
+<input id="begroeting" type="text">
+<input type="button" value="Groet mij!" onclick="groeten()">
+<div id="reactie"></div>
