@@ -12,4 +12,4 @@ Maak 1 afbeelding aan met aan weerszijden van de afbeelding een knop.
 Wanneer de gebruiker op de Sneller knop klikt, moet de zeilboot versnellen naar de motorboot.
 Wanneer de gebruiker op de Langzamer knop klikt, moet de motorboot afremmen en veranderen naar de zeilboot.
 
-Daarnaast moet wanneer de gebruiker met zijn muis over de foto hovert de afbeelding veranderen in het Damen logo.
+Daarnaast moet wanneer de gebruiker met zijn muis over de afbeelding hovert de afbeelding veranderen in het Damen logo.

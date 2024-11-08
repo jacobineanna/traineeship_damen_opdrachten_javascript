@@ -1,0 +1,33 @@
+<head>
+    <title>Oplossing Opdracht 9</title>
+</head>
+
+<body>
+    <h2>Oplossing Opdracht 9</h2>
+
+    <p>Hover over de afbeelding om het Damen logo te zien. Gebruik de knoppen om de boot sneller of langzamer te maken.</p>
+
+    <button onclick="makeFaster()">Sneller</button>
+
+    <img id="boat" src="langzame_zeilboot.jpeg" alt="Zeilboot" onmouseover="changeToDamenLogo()" onmouseout="resetImage()">
+
+    <button onclick="makeSlower()">Langzamer</button>
+
+    <script>
+        function changeToDamenLogo() {
+            document.getElementById("boat").src = "logo_damen.jpeg"; 
+        }
+
+        function resetImage() {
+            document.getElementById("boat").src = "langzame_zeilboot.jpeg"; 
+        }
+
+        function makeFaster() {
+            document.getElementById("boat").src = "snel_marineschip.jpeg";
+        }
+
+        function makeSlower() {
+            document.getElementById("boat").src = "langzame_zeilboot.jpeg";
+        }
+    </script>
+</body>
